@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo.git' // Replace with your repo URL
+                git branch: 'main', url: 'https://github.com/ganeshtamil2003/CypressDemoProject' // Replace with your repo URL
             }
         }
 
