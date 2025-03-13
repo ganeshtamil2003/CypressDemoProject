@@ -14,13 +14,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run E2E Tests') {
             steps {
-                sh 'npm run cy-test' // Ensure this command exists in package.json scripts
+                bat 'npm run cy-test' // Ensure this command exists in package.json scripts
             }
         }
     }
