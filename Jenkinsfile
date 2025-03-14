@@ -31,18 +31,24 @@ pipeline {
     }
 
     post {
-        success {
-            emailext subject: "✅ Jenkins Build #${env.BUILD_NUMBER} Succeeded",
-                     body: "The Jenkins pipeline build was successful. Check details: ${env.BUILD_URL}",
-                     to: "ganesh28062003@gmail.com",
-                     from: "jenkins@example.com"
-        }
-
-        failure {
-            emailext subject: "❌ Jenkins Build #${env.BUILD_NUMBER} Failed",
-                     body: "The Jenkins pipeline build has failed. Check logs: ${env.BUILD_URL}",
-                     to: "ganesh28062003@example.com",
-                     from: "jenkins@example.com"
-        }
+    success {
+        emailext subject: "✅ Jenkins Build #${env.BUILD_NUMBER} Succeeded",
+                 body: """
+                       The Jenkins pipeline build was successful. 🎉  
+                       Check details: ${env.BUILD_URL}
+                       """,
+                 to: "ganesh28062003@gmail.com",
+                 attachLog: true
     }
+
+    failure {
+        emailext subject: "❌ Jenkins Build #${env.BUILD_NUMBER} Failed",
+                 body: """
+                       The Jenkins pipeline build has failed. ❌  
+                       Check logs: ${env.BUILD_URL}
+                       """,
+                 to: "ganesh28062003@gmail.com",
+                 attachLog: true
+    }
+}
 }
