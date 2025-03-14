@@ -4,9 +4,9 @@ pipeline {
     tools {
         nodejs "NodeJS 20.11.0"  // Ensure Node.js is installed via Jenkins Tools
     }
-    environment {
-        NO_COLOR = "1"
-    }
+    // environment {
+    //     NO_COLOR = "1"
+    // }
 
     stages {
         stage('Checkout') {
