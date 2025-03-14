@@ -14,7 +14,7 @@ class HomePage {
     welcomeUser: () => cy.get("#nameofuser"),
     logoutNav: () => cy.get("#logout2"),
     product: (productName) => cy.contains(".card-title", productName),
-    addToCartButton: () => cy.get(".col-sm-12 > .btn"),
+    addToCartButton: () => cy.get('.col-sm-12 > .btn'),
   };
 
   visitHomePage() {
