@@ -37,6 +37,7 @@ pipeline {
                        The Jenkins pipeline build was successful. 🎉  
                        Check details: ${env.BUILD_URL}
                        """,
+                from: "ganesh.rammurugan@finsurge.ai",
                  to: "ganesh28062003@gmail.com",
                  attachLog: true
     }
@@ -47,6 +48,7 @@ pipeline {
                        The Jenkins pipeline build has failed. ❌  
                        Check logs: ${env.BUILD_URL}
                        """,
+                 from: "ganesh.rammurugan@finsurge.ai",      
                  to: "ganesh28062003@gmail.com",
                  attachLog: true
     }
