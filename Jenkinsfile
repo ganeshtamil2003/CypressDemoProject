@@ -48,7 +48,7 @@ pipeline {
                        The Jenkins pipeline build has failed. ❌  
                        Check logs: ${env.BUILD_URL}
                        """,
-                 to: "sajeev.arumugam@finsurge.tech,rock49918@gmail.com",
+                 to: "sajeev.arumugam@finsurge.tech, rock49918@gmail.com",
                  from: "ganesh28062003@gmail.com",      
                  attachLog: true
     }
