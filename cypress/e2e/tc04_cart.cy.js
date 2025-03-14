@@ -33,7 +33,7 @@ describe("Cart Page Test", () => {
   });
 
 
-  it.only("Verify Total Price Equals Sum of Product Prices", () => {
+  it("Verify Total Price Equals Sum of Product Prices", () => {
     const products = ["Sony vaio i5", "Nexus 6", "Sony xperia z5","Nokia lumia 1520"]; 
   
     products.forEach((product) => {
