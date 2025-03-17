@@ -7,7 +7,7 @@ describe("Home Module Test", () => {
     HomePage.visitHomePage();
   });
 
-  it("Verify HomePage Load Successfully", () => {
+  it.only("Verify HomePage Load Successfully", () => {
     cy.title().should("include", "STORE");
     HomePage.verifyNavigationLinks();
   });

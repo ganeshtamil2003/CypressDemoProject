@@ -14,10 +14,34 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import 'cypress-xpath';
+import "./commands";
+import "cypress-xpath";
+import addContext from "mochawesome/addContext";
 
-Cypress.on('uncaught:exception', (err) => {
-    console.log(err);
-    return false;
-  });
+Cypress.on("uncaught:exception", (err) => {
+  console.log(err);
+  return false;
+});
+
+Cypress.on("test:after:run", (test, runnable) => {
+  if (test.state === "failed") {
+    const screenshot = `assets/${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
+    addContext({ test }, screenshot);
+  }
+});
+
+// Cypress.on("test:after:run", (test, runnable) => {
+//   if (test.state === "failed") {
+//     const screenshotFileName = `${runnable.parent.title} -- ${test.title} (failed).png`;
+//     const screenshotPath = `cypress/screenshots/${Cypress.spec.name}/${screenshotFileName}`;
+
+//     Cypress.env("mochawesome_screenshots", Cypress.env("mochawesome_screenshots") || []);
+//     Cypress.env("mochawesome_screenshots").push({
+//       testTitle: test.title,
+//       path: screenshotPath,
+//     });
+
+//     // Log the screenshot path for debugging
+//     console.log(`Screenshot captured for failed test: ${screenshotPath}`);
+//   }
+// });

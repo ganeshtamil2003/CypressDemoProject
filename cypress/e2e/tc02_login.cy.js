@@ -6,7 +6,7 @@ beforeEach(() => {
 });
 
 describe("Login Tests", () => {
-  it("Login with valid username and password", () => {
+  it.only("Login with valid username and password", () => {
     LoginPage.login("finsurge1", "finsurge123");
     cy.get("#logout2").should("be.visible", { timeout: 5000 });
   });

@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-17T07:37:12.358Z",
+    "end": "2025-03-17T07:37:38.224Z",
+    "duration": 25866,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "67b1db39-c92b-4b63-971d-8eab54bfbdea",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tc04_cart.cy.js",
+      "file": "cypress\\e2e\\tc04_cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "87df3379-0fdb-474f-aaaf-b2044a2e4f9e",
+          "title": "Cart Page Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add product to Cart",
+              "fullTitle": "Cart Page Test Add product to Cart",
+              "timedOut": null,
+              "duration": 18026,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/tc04_cart.cy.js/Cart Page Test -- Add product to Cart (failed).png\"",
+              "code": "_HomePage.default.selectProduct(\"Samsung galaxy s6\");\n_HomePage.default.addoCart();\n_CartPage.default.verifyAlertMessage(\"Product Added\");\n_CartPage.default.openCart();\n_CartPage.default.elements.productList().should(\"contain.text\", \"Samsung galaxy s6\");",
+              "err": {
+                "message": "TypeError: _HomePage.default.addoCart is not a function",
+                "estack": "TypeError: _HomePage.default.addoCart is not a function\n    at Context.eval (webpack://cypressproject2/./cypress/e2e/tc04_cart.cy.js:13:13)\n    at runnable.fn (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "59344546-c562-4d10-90e9-0443fe821608",
+              "parentUUID": "87df3379-0fdb-474f-aaaf-b2044a2e4f9e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "59344546-c562-4d10-90e9-0443fe821608"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

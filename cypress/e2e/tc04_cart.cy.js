@@ -8,7 +8,7 @@ describe("Cart Page Test", () => {
     HomePage.visitHomePage();
   });
 
-  it("Add product to Cart", () => {
+  it.only("Add product to Cart", () => {
     HomePage.selectProduct("Samsung galaxy s6");
     HomePage.addToCart();
     CartPage.verifyAlertMessage("Product Added");

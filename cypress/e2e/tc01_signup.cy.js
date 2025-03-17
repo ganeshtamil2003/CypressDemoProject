@@ -7,7 +7,7 @@ beforeEach(() => {
 });
 
 describe("Signup Tests", () => {
-  it("Signup with Unique Username and password", () => {
+  it.only("Signup with Unique Username and password", () => {
     const randomUsername = `testUser${Math.floor(Math.random() * 1000)}`;
     SignupPage.signup(randomUsername, "finsurge123");
     SignupPage.verifyAlertMessage("Sign up successful.");
