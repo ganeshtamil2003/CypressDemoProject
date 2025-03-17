@@ -36,26 +36,28 @@ pipeline {
             }
         }
 
-        stage('Archive Test Reports') {
-            steps {
+       stage('Archive Test Reports') {
+    steps {
+        script {
+            def reportExists = bat(script: 'if exist cypress\\reports\\mochareports\\report.html (echo 1) else (echo 0)', returnStdout: true).trim()
+            if (reportExists == '1') {
                 archiveArtifacts artifacts: 'cypress/reports/mochareports/**/*', fingerprint: true
 
-                script {
-                    if (Jenkins.instance.pluginManager.plugins.find { it.shortName == 'htmlpublisher' }) {
-                        publishHTML(target: [
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: "${MOCHAWESOME_REPORT_DIR}",
-                            reportFiles: 'report.html',
-                            reportName: "Cypress Test Report"
-                        ])
-                    } else {
-                        echo "HTML Publisher plugin is not installed. Skipping HTML report publishing."
-                    }
-                }
+                publishHTML(target: [
+                    allowMissing: true,  // Prevents failure if reports are missing
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: "${MOCHAWESOME_REPORT_DIR}",
+                    reportFiles: 'report.html',
+                    reportName: "Cypress Test Report"
+                ])
+            } else {
+                echo "No HTML report found, skipping archive and publishing."
             }
         }
+    }
+}
+
     }
 
     post {
